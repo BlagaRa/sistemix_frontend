@@ -1,5 +1,5 @@
 import { api, Service } from '@/lib/api';
-import dynamic from 'next/dynamic';
+import dynamicImport from 'next/dynamic';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
@@ -9,11 +9,11 @@ import ServicesSkeleton from '@/components/loading/ServicesSkeleton';
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
-const ServicesSection = dynamic(() => import('@/components/ServicesSection'), {
+const ServicesSection = dynamicImport(() => import('@/components/ServicesSection'), {
   loading: () => <ServicesSkeleton />,
 });
 
-const AboutSection = dynamic(() => import('@/components/AboutSection'), {
+const AboutSection = dynamicImport(() => import('@/components/AboutSection'), {
   loading: () => (
     <div className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
@@ -27,7 +27,7 @@ const AboutSection = dynamic(() => import('@/components/AboutSection'), {
   ),
 });
 
-const ContactForm = dynamic(() => import('@/components/ContactForm'), {
+const ContactForm = dynamicImport(() => import('@/components/ContactForm'), {
   loading: () => (
     <div className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
