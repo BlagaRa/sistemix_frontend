@@ -46,10 +46,10 @@ export default function ServicesSection({ services }: ServicesSectionProps) {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <p className="text-sm font-semibold text-[#303030] mb-3 tracking-wider uppercase">
+          <p className="text-sm font-semibold text-black mb-3 tracking-wider uppercase">
             Our Services
           </p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#303030] mb-4">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black mb-4">
             Premium Tech Solutions
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -70,15 +70,15 @@ export default function ServicesSection({ services }: ServicesSectionProps) {
                 transition={{ delay: index * 0.1, duration: 0.6 }}
                 whileHover={{ y: -8 }}
               >
-                <Card className="h-full border-2 border-[#505050] hover:border-[#303030] transition-all duration-300 hover:shadow-2xl group cursor-pointer bg-white">
+                <Card className="h-full border-2 border-black hover:border-black transition-all duration-300 hover:shadow-2xl group cursor-pointer bg-white">
                   <CardHeader className="pb-4">
                     <motion.div
                       whileHover={{ scale: 1.1, rotate: 5 }}
-                      className="w-16 h-16 bg-[#303030] rounded-xl flex items-center justify-center mb-4 shadow-lg group-hover:shadow-xl transition-shadow"
+                      className="w-16 h-16 bg-black rounded-xl flex items-center justify-center mb-4 shadow-lg group-hover:shadow-xl transition-shadow"
                     >
                       <Icon className="h-8 w-8 text-white" />
                     </motion.div>
-                    <CardTitle className="text-xl font-bold text-[#303030] group-hover:text-[#404040] transition-colors">
+                    <CardTitle className="text-xl font-bold text-black group-hover:text-gray-800 transition-colors">
                       {serviceName}
                     </CardTitle>
                   </CardHeader>
@@ -88,7 +88,7 @@ export default function ServicesSection({ services }: ServicesSectionProps) {
                     </CardDescription>
                     <Link
                       href="/servicii"
-                      className="inline-flex items-center text-[#303030] font-semibold group-hover:gap-2 transition-all hover:text-[#404040]"
+                      className="inline-flex items-center text-black font-semibold group-hover:gap-2 transition-all hover:text-gray-800"
                     >
                       Learn more
                       <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />

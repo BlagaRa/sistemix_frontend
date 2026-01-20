@@ -10,19 +10,19 @@ const heroSlides = [
     title: 'Premium Web Development',
     subtitle: 'Cutting-edge digital solutions',
     description: 'Transform your business with modern, scalable web applications built with the latest technologies.',
-    gradient: 'from-[#303030] via-[#404040] to-[#505050]',
+    image: '/hero2.png',
   },
   {
     title: 'AI-Powered Automation',
     description: 'Intelligent agents and automation systems that optimize your workflows and drive efficiency.',
     subtitle: 'Intelligent technology',
-    gradient: 'from-[#404040] via-[#303030] to-[#505050]',
+    image: '/hero3.png',
   },
   {
     title: 'Expert Tech Consulting',
     description: 'Strategic guidance from industry experts to help you navigate the digital landscape.',
     subtitle: 'Strategic expertise',
-    gradient: 'from-[#303030] via-[#505050] to-[#404040]',
+    image: '/hero4.png',
   },
 ];
 
@@ -57,9 +57,18 @@ export default function Hero() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 1, ease: 'easeInOut' }}
-              className={`absolute inset-0 bg-gradient-to-br ${slide.gradient}`}
+              className="absolute inset-0 overflow-hidden"
             >
-              <div className="absolute inset-0 bg-black/10"></div>
+              <img
+                src={slide.image}
+                alt="Hero background"
+                className="absolute inset-0 w-full h-full object-cover object-center"
+                style={{
+                  transform: 'scale(1)',
+                  filter: 'brightness(1) contrast(1)',
+                }}
+              />
+              <div className="absolute inset-0 bg-black/25"></div>
               <div className="relative h-full flex items-center justify-center">
                 <div className="text-center text-white px-4 max-w-4xl mx-auto">
                   <motion.div
@@ -95,7 +104,7 @@ export default function Hero() {
                     <Button
                       size="lg"
                       asChild
-                      className="bg-white text-[#303030] hover:bg-gray-100 shadow-2xl hover:shadow-3xl transition-all duration-300 group px-8 py-6 text-lg font-semibold"
+                      className="bg-white text-black hover:bg-gray-100 shadow-2xl hover:shadow-3xl transition-all duration-300 group px-8 py-6 text-lg font-semibold"
                     >
                       <a href="#contact">
                         Get Started

@@ -2,24 +2,24 @@
 
 @layer base {
   :root {
-    /* Anthracite Gray & White Color Palette */
+    /* Black & White Color Palette */
     --background: 0 0% 100%; /* White */
-    --foreground: 0 0% 19%; /* Anthracite #303030 */
+    --foreground: 0 0% 0%; /* Black */
     
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 19%;
+    --card-foreground: 0 0% 0%;
     
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 19%;
+    --popover-foreground: 0 0% 0%;
     
-    --primary: 0 0% 19%; /* Anthracite #303030 */
+    --primary: 0 0% 0%; /* Black */
     --primary-foreground: 0 0% 100%; /* White */
     
-    --secondary: 0 0% 25%; /* Dark Gray #404040 */
+    --secondary: 0 0% 0%; /* Black */
     --secondary-foreground: 0 0% 100%;
     
     --accent: 0 0% 96%; /* Light Gray */
-    --accent-foreground: 0 0% 19%;
+    --accent-foreground: 0 0% 0%;
     
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 45%;
@@ -27,9 +27,9 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     
-    --border: 0 0% 31%; /* Medium Gray #505050 */
-    --input: 0 0% 31%; /* Medium Gray #505050 */
-    --ring: 0 0% 19%; /* Anthracite */
+    --border: 0 0% 0%; /* Black */
+    --input: 0 0% 0%; /* Black */
+    --ring: 0 0% 0%; /* Black */
     
     --radius: 0.75rem;
   }
@@ -56,7 +56,7 @@
   }
   
   .glass-dark {
-    background: rgba(48, 48, 48, 0.8);
+    background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -64,11 +64,11 @@
   
   /* Premium gradient backgrounds */
   .gradient-tech {
-    background: linear-gradient(135deg, #303030 0%, #404040 100%);
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
   }
   
   .gradient-premium {
-    background: linear-gradient(135deg, #303030 0%, #404040 50%, #505050 100%);
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #333333 100%);
   }
   
   /* Smooth animations */

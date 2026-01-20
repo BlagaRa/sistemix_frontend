@@ -63,7 +63,7 @@ export default async function ServicesPage() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
-        <section className="bg-gradient-to-br from-[#303030] via-[#404040] to-[#505050] text-white py-16 sm:py-24 relative overflow-hidden">
+        <section className="bg-gradient-to-br from-black via-gray-900 to-black text-white py-16 sm:py-24 relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">

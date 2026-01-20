@@ -43,10 +43,10 @@ export default function AboutSection() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-sm font-semibold text-[#303030] mb-3 tracking-wider uppercase">
+            <p className="text-sm font-semibold text-black mb-3 tracking-wider uppercase">
               About Sistemix
             </p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-[#303030] mb-6">
+            <h2 className="text-4xl sm:text-5xl font-bold text-black mb-6">
               Excellence in Every Project
             </h2>
             <div className="space-y-4 text-lg text-gray-600">
@@ -58,7 +58,7 @@ export default function AboutSection() {
                 With expertise in web development, artificial intelligence, automation, and consulting, 
                 we are your trusted partner for digital projects.
               </p>
-              <p className="font-semibold text-[#303030]">
+              <p className="font-semibold text-black">
                 Quality, professionalism, and client satisfaction are our fundamental values.
               </p>
             </div>
@@ -79,7 +79,7 @@ export default function AboutSection() {
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.3 + index * 0.1 }}
                   whileHover={{ y: -5, scale: 1.02 }}
-                  className="bg-[#303030] rounded-2xl p-6 text-white shadow-xl hover:shadow-2xl transition-all"
+                  className="bg-black rounded-2xl p-6 text-white shadow-xl hover:shadow-2xl transition-all"
                 >
                   <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4">
                     <Icon className="h-6 w-6" />

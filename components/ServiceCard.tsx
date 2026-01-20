@@ -139,17 +139,17 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ delay: index * 0.1, duration: 0.6 }}
     >
-      <Card className="border-2 border-[#505050] hover:border-[#303030] transition-all duration-300 hover:shadow-2xl overflow-hidden group bg-white">
-        <CardHeader className="bg-[#303030]/5 pb-6">
+      <Card className="border-2 border-black hover:border-black transition-all duration-300 hover:shadow-2xl overflow-hidden group bg-white">
+        <CardHeader className="bg-black/5 pb-6">
           <div className="flex items-start space-x-6">
             <motion.div
               whileHover={{ scale: 1.1, rotate: 5 }}
-              className="w-20 h-20 bg-[#303030] rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow flex-shrink-0"
+              className="w-20 h-20 bg-black rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow flex-shrink-0"
             >
               <Icon className="h-10 w-10 text-white" />
             </motion.div>
             <div className="flex-1">
-              <CardTitle className="text-3xl sm:text-4xl font-bold text-[#303030] mb-2 group-hover:text-[#404040] transition-colors">
+              <CardTitle className="text-3xl sm:text-4xl font-bold text-black mb-2 group-hover:text-gray-800 transition-colors">
                 {serviceName}
               </CardTitle>
               <CardDescription className="text-lg text-gray-600">
@@ -161,22 +161,22 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
         <CardContent className="pt-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="text-xl font-bold mb-4 text-[#303030] flex items-center">
+              <h3 className="text-xl font-bold mb-4 text-black flex items-center">
                 <CheckCircle className="h-5 w-5 mr-2" />
                 Features
               </h3>
               <ul className="space-y-3">
                 {details.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start">
-                    <div className="w-2 h-2 bg-[#303030] rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <div className="w-2 h-2 bg-black rounded-full mr-3 mt-2 flex-shrink-0"></div>
                     <span className="text-gray-700">{feature}</span>
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <h3 className="text-xl font-bold mb-4 text-[#303030] flex items-center">
-                <span className="w-6 h-6 bg-[#303030] text-white rounded-full flex items-center justify-center text-sm font-bold mr-2">
+              <h3 className="text-xl font-bold mb-4 text-black flex items-center">
+                <span className="w-6 h-6 bg-black text-white rounded-full flex items-center justify-center text-sm font-bold mr-2">
                   →
                 </span>
                 Process
@@ -184,7 +184,7 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
               <ul className="space-y-3">
                 {details.process.map((step, idx) => (
                   <li key={idx} className="flex items-start">
-                    <span className="w-6 h-6 bg-[#303030] text-white rounded-full flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">
+                    <span className="w-6 h-6 bg-black text-white rounded-full flex items-center justify-center text-xs font-bold mr-3 mt-0.5 flex-shrink-0">
                       {idx + 1}
                     </span>
                     <span className="text-gray-700">{step}</span>
@@ -193,14 +193,14 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
               </ul>
             </div>
             <div>
-              <h3 className="text-xl font-bold mb-4 text-[#303030] flex items-center">
+              <h3 className="text-xl font-bold mb-4 text-black flex items-center">
                 <CheckCircle className="h-5 w-5 mr-2" />
                 Benefits
               </h3>
               <ul className="space-y-3">
                 {details.benefits.map((benefit, idx) => (
                   <li key={idx} className="flex items-start">
-                    <div className="w-2 h-2 bg-[#505050] rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <div className="w-2 h-2 bg-black rounded-full mr-3 mt-2 flex-shrink-0"></div>
                     <span className="text-gray-700">{benefit}</span>
                   </li>
                 ))}
@@ -211,7 +211,7 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
             <Button
               asChild
               size="lg"
-              className="w-full sm:w-auto bg-[#303030] hover:bg-[#404040] text-white shadow-lg hover:shadow-xl transition-all group"
+              className="w-full sm:w-auto bg-black hover:bg-gray-900 text-white shadow-lg hover:shadow-xl transition-all group"
             >
               <Link href="/rezervare">
                 Book a Consultation

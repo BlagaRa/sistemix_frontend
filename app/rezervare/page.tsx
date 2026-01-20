@@ -106,7 +106,7 @@ export default function BookingPage() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
-        <section className="bg-gradient-to-br from-[#303030] via-[#404040] to-[#505050] text-white py-16 sm:py-24 relative overflow-hidden">
+        <section className="bg-gradient-to-br from-black via-gray-900 to-black text-white py-16 sm:py-24 relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <motion.div
@@ -135,8 +135,8 @@ export default function BookingPage() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <Card className="border-2 border-[#505050] shadow-xl">
-                    <CardHeader className="bg-[#303030] text-white rounded-t-lg">
+                  <Card className="border-2 border-black shadow-xl">
+                    <CardHeader className="bg-black text-white rounded-t-lg">
                       <div className="flex items-center gap-3">
                         <CalendarIcon className="h-6 w-6" />
                         <div>
@@ -167,15 +167,15 @@ export default function BookingPage() {
                         <motion.div
                           initial={{ opacity: 0, scale: 0.95 }}
                           animate={{ opacity: 1, scale: 1 }}
-                          className="bg-[#303030]/10 border-2 border-[#303030]/20 rounded-xl p-4"
+                          className="bg-black/10 border-2 border-black/20 rounded-xl p-4"
                         >
                           <div className="flex items-start gap-3">
-                            <CheckCircle2 className="h-5 w-5 text-[#303030] mt-0.5 flex-shrink-0" />
-                            <div>
-                              <p className="text-sm font-semibold text-[#303030] mb-1">
-                                Appointment Selected:
-                              </p>
-                              <p className="text-[#303030] font-bold">
+                            <CheckCircle2 className="h-5 w-5 text-black mt-0.5 flex-shrink-0" />
+                          <div>
+                            <p className="text-sm font-semibold text-black mb-1">
+                              Appointment Selected:
+                            </p>
+                            <p className="text-black font-bold">
                                 {formatDate(selectedDate)} at {selectedTime}
                               </p>
                             </div>
@@ -191,7 +191,7 @@ export default function BookingPage() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                 >
-                  <Card className="border-2 border-[#505050] shadow-xl">
+                  <Card className="border-2 border-black shadow-xl">
                     <CardHeader>
                       <CardTitle className="text-2xl">Contact Details</CardTitle>
                       <CardDescription>
@@ -201,7 +201,7 @@ export default function BookingPage() {
                     <CardContent>
                       <form onSubmit={handleSubmit} className="space-y-6">
                         <div>
-                          <label htmlFor="name" className="block text-sm font-semibold text-[#303030] mb-2">
+                          <label htmlFor="name" className="block text-sm font-semibold text-black mb-2">
                             Full Name
                           </label>
                           <Input
@@ -216,7 +216,7 @@ export default function BookingPage() {
                         </div>
 
                         <div>
-                          <label htmlFor="service" className="block text-sm font-semibold text-[#303030] mb-2">
+                          <label htmlFor="service" className="block text-sm font-semibold text-black mb-2">
                             Service
                           </label>
                           <Select
@@ -240,7 +240,7 @@ export default function BookingPage() {
                         </div>
 
                         <div>
-                          <label htmlFor="email" className="block text-sm font-semibold text-[#303030] mb-2">
+                          <label htmlFor="email" className="block text-sm font-semibold text-black mb-2">
                             Email
                           </label>
                           <Input
@@ -255,7 +255,7 @@ export default function BookingPage() {
                         </div>
 
                         <div>
-                          <label htmlFor="phone" className="block text-sm font-semibold text-[#303030] mb-2">
+                          <label htmlFor="phone" className="block text-sm font-semibold text-black mb-2">
                             Phone Number
                           </label>
                           <Input
@@ -270,7 +270,7 @@ export default function BookingPage() {
                         </div>
 
                         <div>
-                          <label htmlFor="description" className="block text-sm font-semibold text-[#303030] mb-2">
+                          <label htmlFor="description" className="block text-sm font-semibold text-black mb-2">
                             Project Description
                           </label>
                           <Textarea
@@ -286,7 +286,7 @@ export default function BookingPage() {
                         <Button
                           type="submit"
                           disabled={isSubmitting || !selectedDate || !selectedTime}
-                          className="w-full bg-[#303030] hover:bg-[#404040] text-white shadow-lg hover:shadow-xl transition-all duration-300 py-6 text-lg font-semibold"
+                          className="w-full bg-black hover:bg-gray-900 text-white shadow-lg hover:shadow-xl transition-all duration-300 py-6 text-lg font-semibold"
                           size="lg"
                         >
                           {isSubmitting ? (

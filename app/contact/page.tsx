@@ -14,7 +14,7 @@ export default function ContactPage() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
-        <section className="bg-gradient-to-br from-[#303030] via-[#404040] to-[#505050] text-white py-16 sm:py-24 relative overflow-hidden">
+        <section className="bg-gradient-to-br from-black via-gray-900 to-black text-white py-16 sm:py-24 relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <motion.div
@@ -43,25 +43,25 @@ export default function ContactPage() {
               >
                 <div className="space-y-8">
                   <div>
-                    <h2 className="text-3xl font-bold text-[#303030] mb-6">Contact Information</h2>
+                    <h2 className="text-3xl font-bold text-black mb-6">Contact Information</h2>
                     <p className="text-lg text-gray-600 mb-8">
                       Reach out to us through any of the following channels. We're here to help with your tech needs.
                     </p>
                   </div>
 
                   <div className="space-y-6">
-                    <Card className="border-2 border-[#505050] hover:border-[#303030] transition-all">
+                    <Card className="border-2 border-black hover:border-black transition-all">
                       <CardContent className="p-6">
                         <div className="flex items-start space-x-4">
-                          <div className="w-12 h-12 bg-[#303030] rounded-lg flex items-center justify-center flex-shrink-0">
+                          <div className="w-12 h-12 bg-black rounded-lg flex items-center justify-center flex-shrink-0">
                             <Mail className="h-6 w-6 text-white" />
                           </div>
                           <div>
-                            <h3 className="text-lg font-semibold text-[#303030] mb-1">Email</h3>
-                            <a
-                              href="mailto:razvanblaga10@gmail.com"
-                              className="text-[#303030] hover:text-[#404040] hover:underline"
-                            >
+                            <h3 className="text-lg font-semibold text-black mb-1">Email</h3>
+                          <a
+                            href="mailto:razvanblaga10@gmail.com"
+                            className="text-black hover:text-gray-800 hover:underline"
+                          >
                               razvanblaga10@gmail.com
                             </a>
                           </div>
@@ -69,18 +69,18 @@ export default function ContactPage() {
                       </CardContent>
                     </Card>
 
-                    <Card className="border-2 border-[#505050] hover:border-[#303030] transition-all">
+                    <Card className="border-2 border-black hover:border-black transition-all">
                       <CardContent className="p-6">
                         <div className="flex items-start space-x-4">
-                          <div className="w-12 h-12 bg-[#303030] rounded-lg flex items-center justify-center flex-shrink-0">
+                          <div className="w-12 h-12 bg-black rounded-lg flex items-center justify-center flex-shrink-0">
                             <Phone className="h-6 w-6 text-white" />
                           </div>
                           <div>
-                            <h3 className="text-lg font-semibold text-[#303030] mb-1">Phone</h3>
-                            <a
-                              href="tel:+40772169637"
-                              className="text-[#303030] hover:text-[#404040] hover:underline"
-                            >
+                            <h3 className="text-lg font-semibold text-black mb-1">Phone</h3>
+                          <a
+                            href="tel:+40772169637"
+                            className="text-black hover:text-gray-800 hover:underline"
+                          >
                               +40 772 169 637
                             </a>
                           </div>
@@ -88,14 +88,14 @@ export default function ContactPage() {
                       </CardContent>
                     </Card>
 
-                    <Card className="border-2 border-[#505050] hover:border-[#303030] transition-all">
+                    <Card className="border-2 border-black hover:border-black transition-all">
                       <CardContent className="p-6">
                         <div className="flex items-start space-x-4">
-                          <div className="w-12 h-12 bg-[#303030] rounded-lg flex items-center justify-center flex-shrink-0">
+                          <div className="w-12 h-12 bg-black rounded-lg flex items-center justify-center flex-shrink-0">
                             <MapPin className="h-6 w-6 text-white" />
                           </div>
                           <div>
-                            <h3 className="text-lg font-semibold text-[#303030] mb-1">Location</h3>
+                            <h3 className="text-lg font-semibold text-black mb-1">Location</h3>
                             <p className="text-gray-600">Romania, European Union</p>
                           </div>
                         </div>
@@ -110,14 +110,14 @@ export default function ContactPage() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <Card className="border-2 border-[#505050] shadow-xl">
-                  <CardHeader className="bg-[#303030] text-white rounded-t-lg">
+                <Card className="border-2 border-black shadow-xl">
+                  <CardHeader className="bg-black text-white rounded-t-lg">
                     <CardTitle className="text-2xl">Send us a Message</CardTitle>
                   </CardHeader>
                   <CardContent className="p-6">
                     <form className="space-y-6">
                       <div>
-                        <label htmlFor="name" className="block text-sm font-semibold text-[#303030] mb-2">
+                        <label htmlFor="name" className="block text-sm font-semibold text-black mb-2">
                           Name
                         </label>
                         <Input
@@ -130,7 +130,7 @@ export default function ContactPage() {
                       </div>
 
                       <div>
-                        <label htmlFor="email" className="block text-sm font-semibold text-[#303030] mb-2">
+                        <label htmlFor="email" className="block text-sm font-semibold text-black mb-2">
                           Email
                         </label>
                         <Input
@@ -143,7 +143,7 @@ export default function ContactPage() {
                       </div>
 
                       <div>
-                        <label htmlFor="subject" className="block text-sm font-semibold text-[#303030] mb-2">
+                        <label htmlFor="subject" className="block text-sm font-semibold text-black mb-2">
                           Subject
                         </label>
                         <Input
@@ -156,7 +156,7 @@ export default function ContactPage() {
                       </div>
 
                       <div>
-                        <label htmlFor="message" className="block text-sm font-semibold text-[#303030] mb-2">
+                        <label htmlFor="message" className="block text-sm font-semibold text-black mb-2">
                           Message
                         </label>
                         <Textarea
@@ -170,7 +170,7 @@ export default function ContactPage() {
 
                       <Button
                         type="submit"
-                        className="w-full bg-[#303030] hover:bg-[#404040] text-white shadow-lg hover:shadow-xl transition-all duration-300 py-6 text-lg font-semibold"
+                        className="w-full bg-black hover:bg-gray-900 text-white shadow-lg hover:shadow-xl transition-all duration-300 py-6 text-lg font-semibold"
                         size="lg"
                       >
                         <Send className="mr-2 h-5 w-5" />

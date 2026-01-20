@@ -96,19 +96,19 @@ export default function Calendar({ selectedDate, onDateSelect }: CalendarProps) 
   const days = renderCalendar();
 
   return (
-    <div className="bg-white rounded-xl border-2 border-[#505050] shadow-lg p-4 sm:p-6">
+    <div className="bg-white rounded-xl border-2 border-black shadow-lg p-4 sm:p-6">
       <div className="flex items-center justify-between mb-6">
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <Button
             variant="outline"
             size="icon"
             onClick={handlePrevMonth}
-            className="h-9 w-9 border-2 border-[#505050] hover:border-[#303030] hover:bg-[#303030]/5"
+            className="h-9 w-9 border-2 border-black hover:border-black hover:bg-black/5"
           >
             <ChevronLeft className="h-4 w-4" />
           </Button>
         </motion.div>
-        <h3 className="text-lg sm:text-xl font-bold text-[#303030]">
+        <h3 className="text-lg sm:text-xl font-bold text-black">
           {monthNames[currentMonth]} {currentYear}
         </h3>
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -116,7 +116,7 @@ export default function Calendar({ selectedDate, onDateSelect }: CalendarProps) 
             variant="outline"
             size="icon"
             onClick={handleNextMonth}
-            className="h-9 w-9 border-2 border-[#505050] hover:border-[#303030] hover:bg-[#303030]/5"
+            className="h-9 w-9 border-2 border-black hover:border-black hover:bg-black/5"
           >
             <ChevronRight className="h-4 w-4" />
           </Button>
@@ -155,11 +155,11 @@ export default function Calendar({ selectedDate, onDateSelect }: CalendarProps) 
                 aspect-square text-xs sm:text-sm font-semibold rounded-lg transition-all duration-200
                 ${available
                   ? selected
-                    ? 'bg-[#303030] text-white shadow-lg scale-105'
-                    : 'bg-gray-50 text-[#303030] hover:bg-[#303030]/10 hover:text-[#303030] hover:border-2 hover:border-[#303030]/30'
+                    ? 'bg-black text-white shadow-lg scale-105'
+                    : 'bg-gray-50 text-black hover:bg-black/10 hover:text-black hover:border-2 hover:border-black/30'
                   : 'bg-gray-100 text-gray-400 cursor-not-allowed'
                 }
-                ${selected ? 'ring-2 ring-[#303030] ring-offset-2' : ''}
+                ${selected ? 'ring-2 ring-black ring-offset-2' : ''}
                 touch-manipulation
               `}
             >
@@ -171,7 +171,7 @@ export default function Calendar({ selectedDate, onDateSelect }: CalendarProps) 
 
       <div className="mt-4 flex items-center justify-center flex-wrap gap-4 text-xs text-gray-500">
         <div className="flex items-center">
-          <div className="w-3 h-3 bg-[#303030]/20 border-2 border-[#303030] rounded mr-2"></div>
+          <div className="w-3 h-3 bg-black/20 border-2 border-black rounded mr-2"></div>
           <span>Available</span>
         </div>
         <div className="flex items-center">

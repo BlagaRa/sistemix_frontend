@@ -12,7 +12,7 @@ export default function TermsOfServicePage() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
-        <section className="bg-gradient-to-br from-[#303030] via-[#404040] to-[#505050] text-white py-16 sm:py-24 relative overflow-hidden">
+        <section className="bg-gradient-to-br from-black via-gray-900 to-black text-white py-16 sm:py-24 relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
@@ -29,7 +29,7 @@ export default function TermsOfServicePage() {
             <div className="prose prose-lg max-w-none">
               <div className="space-y-8 text-gray-700">
                 <div>
-                  <h2 className="text-2xl font-bold text-[#303030] mb-4">1. Acceptance of Terms</h2>
+                  <h2 className="text-2xl font-bold text-black mb-4">1. Acceptance of Terms</h2>
                   <p className="mb-4">
                     By accessing and using the services provided by Blaga Razvan Antonio PFA ("we", "us", or "our"), you accept and agree to be bound by these Terms of Service ("Terms"). These Terms constitute a legally binding agreement between you and Blaga Razvan Antonio PFA, governed by Romanian law and European Union regulations.
                   </p>
@@ -39,9 +39,9 @@ export default function TermsOfServicePage() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-[#303030] mb-4">2. Company Information</h2>
-                  <div className="bg-gray-50 p-4 rounded-lg border border-[#505050] mb-4">
-                    <p className="font-semibold text-[#303030]">Blaga Razvan Antonio PFA</p>
+                  <h2 className="text-2xl font-bold text-black mb-4">2. Company Information</h2>
+                    <div className="bg-gray-50 p-4 rounded-lg border border-black mb-4">
+                    <p className="font-semibold text-black">Blaga Razvan Antonio PFA</p>
                     <p>CUI: RO12345678</p>
                     <p>Romania, European Union</p>
                     <p>Email: razvanblaga10@gmail.com</p>
@@ -53,7 +53,7 @@ export default function TermsOfServicePage() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-[#303030] mb-4">3. Services Description</h2>
+                  <h2 className="text-2xl font-bold text-black mb-4">3. Services Description</h2>
                   <p className="mb-4">
                     Blaga Razvan Antonio PFA provides the following services:
                   </p>
@@ -69,7 +69,7 @@ export default function TermsOfServicePage() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-[#303030] mb-4">4. User Obligations</h2>
+                  <h2 className="text-2xl font-bold text-black mb-4">4. User Obligations</h2>
                   <p className="mb-4">
                     By using our services, you agree to:
                   </p>
@@ -86,7 +86,7 @@ export default function TermsOfServicePage() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-[#303030] mb-4">5. Booking and Consultations</h2>
+                  <h2 className="text-2xl font-bold text-black mb-4">5. Booking and Consultations</h2>
                   <p className="mb-4">
                     When booking a consultation or appointment:
                   </p>
@@ -100,7 +100,7 @@ export default function TermsOfServicePage() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-[#303030] mb-4">6. Payment Terms</h2>
+                  <h2 className="text-2xl font-bold text-black mb-4">6. Payment Terms</h2>
                   <p className="mb-4">
                     Payment terms are as follows:
                   </p>
@@ -115,7 +115,7 @@ export default function TermsOfServicePage() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-[#303030] mb-4">7. Intellectual Property Rights</h2>
+                  <h2 className="text-2xl font-bold text-black mb-4">7. Intellectual Property Rights</h2>
                   <p className="mb-4">
                     <strong>Our Intellectual Property:</strong> All content, designs, code, and materials created by Blaga Razvan Antonio PFA remain our intellectual property unless otherwise agreed in writing. You may not copy, modify, distribute, or create derivative works without our written permission.
                   </p>
@@ -128,7 +128,7 @@ export default function TermsOfServicePage() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-[#303030] mb-4">8. Service Agreements and Contracts</h2>
+                  <h2 className="text-2xl font-bold text-black mb-4">8. Service Agreements and Contracts</h2>
                   <p className="mb-4">
                     For specific projects, we will enter into detailed service agreements that:
                   </p>
@@ -145,7 +145,7 @@ export default function TermsOfServicePage() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-[#303030] mb-4">9. Warranties and Disclaimers</h2>
+                  <h2 className="text-2xl font-bold text-black mb-4">9. Warranties and Disclaimers</h2>
                   <p className="mb-4">
                     <strong>Service Warranties:</strong> We warrant that our services will be performed with reasonable skill and care. Specific warranties will be detailed in individual service agreements.
                   </p>
@@ -161,7 +161,7 @@ export default function TermsOfServicePage() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-[#303030] mb-4">10. Limitation of Liability</h2>
+                  <h2 className="text-2xl font-bold text-black mb-4">10. Limitation of Liability</h2>
                   <p className="mb-4">
                     In accordance with Romanian Law No. 365/2002 on electronic commerce and consumer protection:
                   </p>
@@ -175,7 +175,7 @@ export default function TermsOfServicePage() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-[#303030] mb-4">11. Indemnification</h2>
+                  <h2 className="text-2xl font-bold text-black mb-4">11. Indemnification</h2>
                   <p className="mb-4">
                     You agree to indemnify and hold harmless Blaga Razvan Antonio PFA, its employees, and agents from any claims, damages, losses, liabilities, and expenses (including legal fees) arising from:
                   </p>
@@ -188,7 +188,7 @@ export default function TermsOfServicePage() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-[#303030] mb-4">12. Termination</h2>
+                  <h2 className="text-2xl font-bold text-black mb-4">12. Termination</h2>
                   <p className="mb-4">
                     Either party may terminate service agreements as specified in individual contracts. We reserve the right to:
                   </p>
@@ -203,7 +203,7 @@ export default function TermsOfServicePage() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-[#303030] mb-4">13. Consumer Rights (EU/RO)</h2>
+                  <h2 className="text-2xl font-bold text-black mb-4">13. Consumer Rights (EU/RO)</h2>
                   <p className="mb-4">
                     If you are a consumer in the European Union or Romania, you have the following rights under Romanian Law No. 129/2018 on consumer protection:
                   </p>
@@ -219,7 +219,7 @@ export default function TermsOfServicePage() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-[#303030] mb-4">14. Dispute Resolution</h2>
+                  <h2 className="text-2xl font-bold text-black mb-4">14. Dispute Resolution</h2>
                   <p className="mb-4">
                     <strong>Negotiation:</strong> We encourage resolving disputes through good faith negotiation.
                   </p>
@@ -240,7 +240,7 @@ export default function TermsOfServicePage() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-[#303030] mb-4">15. Force Majeure</h2>
+                  <h2 className="text-2xl font-bold text-black mb-4">15. Force Majeure</h2>
                   <p className="mb-4">
                     We are not liable for delays or failures in performance resulting from circumstances beyond our reasonable control, including but not limited to:
                   </p>
@@ -254,14 +254,14 @@ export default function TermsOfServicePage() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-[#303030] mb-4">16. Privacy and Data Protection</h2>
+                  <h2 className="text-2xl font-bold text-black mb-4">16. Privacy and Data Protection</h2>
                   <p className="mb-4">
                     Your use of our services is also governed by our Privacy Policy, which complies with GDPR and Romanian data protection laws. Please review our Privacy Policy to understand how we collect, use, and protect your personal data.
                   </p>
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-[#303030] mb-4">17. Modifications to Terms</h2>
+                  <h2 className="text-2xl font-bold text-black mb-4">17. Modifications to Terms</h2>
                   <p className="mb-4">
                     We reserve the right to modify these Terms at any time. Material changes will be notified through:
                   </p>
@@ -276,33 +276,33 @@ export default function TermsOfServicePage() {
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-[#303030] mb-4">18. Severability</h2>
+                  <h2 className="text-2xl font-bold text-black mb-4">18. Severability</h2>
                   <p className="mb-4">
                     If any provision of these Terms is found to be invalid, illegal, or unenforceable, the remaining provisions will continue in full force and effect. The invalid provision will be replaced with a valid provision that most closely reflects the intent of the original.
                   </p>
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-[#303030] mb-4">19. Entire Agreement</h2>
+                  <h2 className="text-2xl font-bold text-black mb-4">19. Entire Agreement</h2>
                   <p className="mb-4">
                     These Terms, together with our Privacy Policy and any specific service agreements, constitute the entire agreement between you and Blaga Razvan Antonio PFA regarding the use of our services.
                   </p>
                 </div>
 
                 <div>
-                  <h2 className="text-2xl font-bold text-[#303030] mb-4">20. Contact Information</h2>
+                  <h2 className="text-2xl font-bold text-black mb-4">20. Contact Information</h2>
                   <p className="mb-4">
                     For questions, concerns, or to exercise your rights under these Terms, please contact us:
                   </p>
-                  <div className="bg-gray-50 p-4 rounded-lg border border-[#505050]">
-                    <p className="font-semibold text-[#303030]">Blaga Razvan Antonio PFA</p>
-                    <p>Email: <a href="mailto:razvanblaga10@gmail.com" className="text-[#303030] hover:underline">razvanblaga10@gmail.com</a></p>
-                    <p>Phone: <a href="tel:+40772169637" className="text-[#303030] hover:underline">+40 772 169 637</a></p>
+                  <div className="bg-gray-50 p-4 rounded-lg border border-black">
+                    <p className="font-semibold text-black">Blaga Razvan Antonio PFA</p>
+                    <p>Email: <a href="mailto:razvanblaga10@gmail.com" className="text-black hover:underline">razvanblaga10@gmail.com</a></p>
+                    <p>Phone: <a href="tel:+40772169637" className="text-black hover:underline">+40 772 169 637</a></p>
                     <p className="mt-4">
                       <strong>Consumer Protection Authority (ANPC):</strong><br />
                       Calea Vitan 55-59<br />
                       Sector 3, Bucharest, Romania<br />
-                      Website: <a href="https://www.anpc.ro" target="_blank" rel="noopener noreferrer" className="text-[#303030] hover:underline">www.anpc.ro</a>
+                      Website: <a href="https://www.anpc.ro" target="_blank" rel="noopener noreferrer" className="text-black hover:underline">www.anpc.ro</a>
                     </p>
                   </div>
                 </div>

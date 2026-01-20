@@ -23,8 +23,8 @@ export default function TimeSelector({ selectedTime, onTimeSelect, disabled }: T
   const timeSlots = generateTimeSlots();
 
   return (
-    <div className="bg-white rounded-xl border-2 border-[#505050] shadow-lg p-4 sm:p-6">
-      <h3 className="text-base sm:text-lg font-bold text-[#303030] mb-4">Select Time</h3>
+    <div className="bg-white rounded-xl border-2 border-black shadow-lg p-4 sm:p-6">
+      <h3 className="text-base sm:text-lg font-bold text-black mb-4">Select Time</h3>
       <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2">
         {timeSlots.map((time, index) => (
           <motion.button
@@ -39,8 +39,8 @@ export default function TimeSelector({ selectedTime, onTimeSelect, disabled }: T
             className={`
               px-3 py-2.5 text-xs sm:text-sm font-semibold rounded-lg transition-all duration-200
               ${selectedTime === time
-                ? 'bg-[#303030] text-white shadow-lg'
-                : 'bg-gray-50 text-[#303030] hover:bg-[#303030]/10 hover:text-[#303030] hover:border-2 hover:border-[#303030]/30 border-2 border-transparent'
+                ? 'bg-black text-white shadow-lg'
+                : 'bg-gray-50 text-black hover:bg-black/10 hover:text-black hover:border-2 hover:border-black/30 border-2 border-transparent'
               }
               ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer touch-manipulation'}
             `}

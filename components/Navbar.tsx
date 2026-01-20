@@ -26,9 +26,16 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#303030] shadow-lg'
+          ? 'bg-black shadow-lg shadow-black/50 border-b border-white/10'
           : 'bg-white/95 backdrop-blur-md border-b border-gray-200'
       }`}
+      style={
+        scrolled
+          ? {
+              boxShadow: '0 10px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+            }
+          : {}
+      }
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
@@ -53,22 +60,22 @@ export default function Navbar() {
           
           <div className="hidden md:flex items-center space-x-8">
             <motion.div whileHover={{ y: -2 }} whileTap={{ y: 0 }}>
-              <Link href="/servicii" className={`transition-colors font-medium ${scrolled ? 'text-gray-300 hover:text-white' : 'text-[#303030] hover:text-[#404040]'}`}>
+              <Link href="/servicii" className={`transition-colors font-medium ${scrolled ? 'text-gray-300 hover:text-white' : 'text-black hover:text-gray-800'}`}>
                 Services
               </Link>
             </motion.div>
             <motion.div whileHover={{ y: -2 }} whileTap={{ y: 0 }}>
-              <Link href="/#about" className={`transition-colors font-medium ${scrolled ? 'text-gray-300 hover:text-white' : 'text-[#303030] hover:text-[#404040]'}`}>
+              <Link href="/#about" className={`transition-colors font-medium ${scrolled ? 'text-gray-300 hover:text-white' : 'text-black hover:text-gray-800'}`}>
                 About
               </Link>
             </motion.div>
             <motion.div whileHover={{ y: -2 }} whileTap={{ y: 0 }}>
-              <Link href="/contact" className={`transition-colors font-medium ${scrolled ? 'text-gray-300 hover:text-white' : 'text-[#303030] hover:text-[#404040]'}`}>
+              <Link href="/contact" className={`transition-colors font-medium ${scrolled ? 'text-gray-300 hover:text-white' : 'text-black hover:text-gray-800'}`}>
                 Contact
               </Link>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button asChild className={scrolled ? "bg-white hover:bg-gray-100 text-[#303030] shadow-lg" : "bg-[#303030] hover:bg-[#404040] text-white shadow-lg"}>
+              <Button asChild className={scrolled ? "bg-white hover:bg-gray-100 text-black shadow-lg" : "bg-black hover:bg-gray-900 text-white shadow-lg"}>
                 <Link href="/rezervare">Book a Call</Link>
               </Button>
             </motion.div>
@@ -81,7 +88,7 @@ export default function Navbar() {
                 size="icon"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 aria-label="Toggle menu"
-                className={`h-10 w-10 ${scrolled ? 'text-white' : 'text-[#303030]'}`}
+                className={`h-10 w-10 ${scrolled ? 'text-white' : 'text-black'}`}
               >
                 {isMenuOpen ? (
                   <X className="h-6 w-6" />
@@ -115,7 +122,7 @@ export default function Navbar() {
                     className={`transition-colors px-4 py-2 block font-medium ${
                       scrolled 
                         ? 'text-white hover:text-gray-200' 
-                        : 'text-[#303030] hover:text-[#404040]'
+                        : 'text-black hover:text-gray-800'
                     }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
@@ -132,7 +139,7 @@ export default function Navbar() {
                     className={`transition-colors px-4 py-2 block font-medium ${
                       scrolled 
                         ? 'text-white hover:text-gray-200' 
-                        : 'text-[#303030] hover:text-[#404040]'
+                        : 'text-black hover:text-gray-800'
                     }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
@@ -149,7 +156,7 @@ export default function Navbar() {
                     className={`transition-colors px-4 py-2 block font-medium ${
                       scrolled 
                         ? 'text-white hover:text-gray-200' 
-                        : 'text-[#303030] hover:text-[#404040]'
+                        : 'text-black hover:text-gray-800'
                     }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
@@ -164,8 +171,8 @@ export default function Navbar() {
                 >
                   <Button asChild className={`w-full ${
                     scrolled 
-                      ? 'bg-white hover:bg-gray-100 text-[#303030]' 
-                      : 'bg-[#303030] hover:bg-[#404040] text-white'
+                      ? 'bg-white hover:bg-gray-100 text-black' 
+                      : 'bg-black hover:bg-gray-900 text-white'
                   }`}>
                     <Link href="/rezervare" onClick={() => setIsMenuOpen(false)}>
                       Book a Call

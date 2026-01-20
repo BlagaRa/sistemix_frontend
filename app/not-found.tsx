@@ -22,8 +22,8 @@ export default function NotFound() {
       <Navbar />
       <main className="flex-grow flex items-center justify-center bg-white">
         <div className="text-center px-4">
-          <h1 className="text-6xl sm:text-8xl font-bold text-[#303030] mb-4">404</h1>
-          <h2 className="text-2xl sm:text-3xl font-semibold text-[#303030] mb-4">
+          <h1 className="text-6xl sm:text-8xl font-bold text-black mb-4">404</h1>
+          <h2 className="text-2xl sm:text-3xl font-semibold text-black mb-4">
             Page Not Found
           </h2>
           <p className="text-gray-600 mb-8 max-w-md mx-auto">
@@ -31,7 +31,7 @@ export default function NotFound() {
           </p>
           <a
             href="/"
-            className="inline-block bg-[#303030] hover:bg-[#404040] text-white font-semibold px-8 py-3 rounded-lg transition-colors"
+            className="inline-block bg-black hover:bg-gray-900 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
           >
             Go to Homepage
           </a>

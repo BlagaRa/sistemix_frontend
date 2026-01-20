@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 export default function BookingSkeleton() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-      <Card className="border-2 border-[#505050]">
+      <Card className="border-2 border-black">
         <CardHeader>
           <Skeleton className="h-8 w-3/4 mb-2" />
           <Skeleton className="h-4 w-1/2" />
@@ -14,7 +14,7 @@ export default function BookingSkeleton() {
           <Skeleton className="h-32 w-full rounded-xl" />
         </CardContent>
       </Card>
-      <Card className="border-2 border-[#505050]">
+      <Card className="border-2 border-black">
         <CardHeader>
           <Skeleton className="h-8 w-3/4 mb-2" />
           <Skeleton className="h-4 w-1/2" />

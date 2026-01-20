@@ -9,7 +9,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#303030] text-white relative overflow-hidden">
+    <footer className="bg-black text-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">

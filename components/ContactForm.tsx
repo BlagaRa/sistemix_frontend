@@ -104,10 +104,10 @@ export default function ContactForm({ services }: ContactFormProps) {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <p className="text-sm font-semibold text-[#303030] mb-3 tracking-wider uppercase">
+          <p className="text-sm font-semibold text-black mb-3 tracking-wider uppercase">
             Get in Touch
           </p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#303030] mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-black mb-4">
             Schedule a Consultation
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -122,8 +122,8 @@ export default function ContactForm({ services }: ContactFormProps) {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="space-y-6"
           >
-            <Card className="border-2 border-[#505050] shadow-xl">
-              <CardHeader className="bg-[#303030] text-white rounded-t-lg">
+            <Card className="border-2 border-black shadow-xl">
+              <CardHeader className="bg-black text-white rounded-t-lg">
                 <div className="flex items-center gap-3">
                   <CalendarIcon className="h-6 w-6" />
                   <div>
@@ -154,15 +154,15 @@ export default function ContactForm({ services }: ContactFormProps) {
                   <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="bg-[#303030]/10 border-2 border-[#303030]/20 rounded-xl p-4"
+                    className="bg-black/10 border-2 border-black/20 rounded-xl p-4"
                   >
                     <div className="flex items-start gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-[#303030] mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="h-5 w-5 text-black mt-0.5 flex-shrink-0" />
                       <div>
-                        <p className="text-sm font-semibold text-[#303030] mb-1">
+                        <p className="text-sm font-semibold text-black mb-1">
                           Appointment Selected:
                         </p>
-                        <p className="text-[#303030] font-bold">
+                        <p className="text-black font-bold">
                           {formatDate(selectedDate)} at {selectedTime}
                         </p>
                       </div>
@@ -178,7 +178,7 @@ export default function ContactForm({ services }: ContactFormProps) {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            <Card className="border-2 border-[#505050] shadow-xl">
+            <Card className="border-2 border-black shadow-xl">
               <CardHeader>
                 <CardTitle className="text-2xl">Contact Details</CardTitle>
                 <CardDescription>
@@ -188,7 +188,7 @@ export default function ContactForm({ services }: ContactFormProps) {
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-[#303030] mb-2">
+                    <label htmlFor="name" className="block text-sm font-semibold text-black mb-2">
                       Full Name
                     </label>
                     <Input
@@ -203,7 +203,7 @@ export default function ContactForm({ services }: ContactFormProps) {
                   </div>
 
                   <div>
-                    <label htmlFor="service" className="block text-sm font-semibold text-[#303030] mb-2">
+                    <label htmlFor="service" className="block text-sm font-semibold text-black mb-2">
                       Service
                     </label>
                     <Select
@@ -222,7 +222,7 @@ export default function ContactForm({ services }: ContactFormProps) {
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-[#303030] mb-2">
+                    <label htmlFor="email" className="block text-sm font-semibold text-black mb-2">
                       Email
                     </label>
                     <Input
@@ -237,7 +237,7 @@ export default function ContactForm({ services }: ContactFormProps) {
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-semibold text-[#303030] mb-2">
+                    <label htmlFor="phone" className="block text-sm font-semibold text-black mb-2">
                       Phone Number
                     </label>
                     <Input
@@ -252,7 +252,7 @@ export default function ContactForm({ services }: ContactFormProps) {
                   </div>
 
                   <div>
-                    <label htmlFor="description" className="block text-sm font-semibold text-[#303030] mb-2">
+                    <label htmlFor="description" className="block text-sm font-semibold text-black mb-2">
                       Project Description
                     </label>
                     <Textarea
@@ -268,7 +268,7 @@ export default function ContactForm({ services }: ContactFormProps) {
                   <Button
                     type="submit"
                     disabled={isSubmitting || !selectedDate || !selectedTime}
-                    className="w-full bg-[#303030] hover:bg-[#404040] text-white shadow-lg hover:shadow-xl transition-all duration-300 py-6 text-lg font-semibold"
+                    className="w-full bg-black hover:bg-gray-900 text-white shadow-lg hover:shadow-xl transition-all duration-300 py-6 text-lg font-semibold"
                     size="lg"
                   >
                     {isSubmitting ? (
