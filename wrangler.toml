@@ -1,0 +1,7 @@
+name = "sistemix-frontend"
+compatibility_date = "2024-01-01"
+
+[env.production]
+routes = [
+  { pattern = "sistemix.com", zone_name = "sistemix.com" }
+]
