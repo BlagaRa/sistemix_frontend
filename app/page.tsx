@@ -8,6 +8,7 @@ import ServicesSkeleton from '@/components/loading/ServicesSkeleton';
 // Force dynamic rendering to avoid build-time API calls
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
+export const runtime = 'edge';
 
 const ServicesSection = dynamicImport(() => import('@/components/ServicesSection'), {
   loading: () => <ServicesSkeleton />,

@@ -7,6 +7,7 @@ import { Metadata } from 'next';
 // Force dynamic rendering to avoid build-time API calls
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
+export const runtime = 'edge';
 
 export const metadata: Metadata = {
   title: 'Web Development, AI Agents & Automation Services | Sistemix',
