@@ -5,6 +5,10 @@ import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
 import ServicesSkeleton from '@/components/loading/ServicesSkeleton';
 
+// Force dynamic rendering to avoid build-time API calls
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 const ServicesSection = dynamic(() => import('@/components/ServicesSection'), {
   loading: () => <ServicesSkeleton />,
 });

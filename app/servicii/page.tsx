@@ -4,6 +4,10 @@ import Footer from '@/components/Footer';
 import ServiceCard from '@/components/ServiceCard';
 import { Metadata } from 'next';
 
+// Force dynamic rendering to avoid build-time API calls
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export const metadata: Metadata = {
   title: 'Web Development, AI Agents & Automation Services | Sistemix',
   description: 'Sistemix offers professional web development, website creation, AI agents development, business automation, and tech consulting services in Romania and Europe. Specialized solutions for startups and businesses.',
