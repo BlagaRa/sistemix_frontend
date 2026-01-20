@@ -10,6 +10,7 @@ interface BookingFormProps {
 
 export default function BookingForm({ services }: BookingFormProps) {
   const [formData, setFormData] = useState<CreateBookingDto>({
+    name: '',
     email: '',
     phone: '',
     description: '',
@@ -27,6 +28,7 @@ export default function BookingForm({ services }: BookingFormProps) {
       await api.createBooking(formData);
       setMessage({ type: 'success', text: 'Rezervarea ta a fost trimisă cu succes! Te vom contacta în curând.' });
       setFormData({
+        name: '',
         email: '',
         phone: '',
         description: '',
@@ -45,6 +47,20 @@ export default function BookingForm({ services }: BookingFormProps) {
   return (
     <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-md p-6 space-y-4">
       <h2 className="text-2xl font-bold text-gray-800 mb-4">Rezervă o discuție</h2>
+
+      <div>
+        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+          Nume complet
+        </label>
+        <input
+          type="text"
+          id="name"
+          value={formData.name}
+          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        />
+      </div>
 
       <div>
         <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1">
