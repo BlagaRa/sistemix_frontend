@@ -1,4 +1,24 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
+// Backend API URL - MUST be set via environment variable
+// Set NEXT_PUBLIC_API_URL in Cloudflare Pages → Settings → Environment Variables
+// For local development, defaults to http://localhost:3000
+const getApiBaseUrl = (): string => {
+  const url = process.env.NEXT_PUBLIC_API_URL;
+  
+  if (!url) {
+    if (process.env.NODE_ENV === 'production') {
+      throw new Error(
+        'NEXT_PUBLIC_API_URL is not set! ' +
+        'Please configure it in Cloudflare Pages → Settings → Environment Variables. ' +
+        'Set NEXT_PUBLIC_API_URL to your backend URL (e.g., https://api.sistemix.com)'
+      );
+    }
+    return 'http://localhost:3000';
+  }
+  
+  return url;
+};
+
+const API_BASE_URL = getApiBaseUrl();
 
 export interface Service {
   id: string;
