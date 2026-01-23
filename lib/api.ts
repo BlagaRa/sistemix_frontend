@@ -57,6 +57,8 @@ export interface CreateBookingDto {
   phone: string;
   description: string;
   serviceId: string;
+  appointmentDate?: string;
+  appointmentTime?: string;
 }
 
 export interface UpdateBookingDto {

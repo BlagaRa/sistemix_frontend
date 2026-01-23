@@ -80,6 +80,8 @@ export default function ContactForm({ services }: ContactFormProps) {
       const booking = await api.createBooking({
         ...formData,
         description: bookingDescription,
+        appointmentDate: selectedDate.toISOString(),
+        appointmentTime: selectedTime,
       });
       setBookingId(booking.id);
       setVerificationStep('verify');

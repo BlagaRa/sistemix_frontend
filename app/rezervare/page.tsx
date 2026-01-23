@@ -91,6 +91,8 @@ export default function BookingPage() {
       const booking = await api.createBooking({
         ...formData,
         description: bookingDescription,
+        appointmentDate: selectedDate.toISOString(),
+        appointmentTime: selectedTime,
       });
       setBookingId(booking.id);
       setVerificationStep('verify');
