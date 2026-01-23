@@ -16,7 +16,7 @@ export default function BookingForm({ services }: BookingFormProps) {
     email: '',
     phone: '',
     description: '',
-    serviceId: services[0]?.id || '',
+    serviceId: services && services.length > 0 ? services[0].id : '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
@@ -39,10 +39,21 @@ export default function BookingForm({ services }: BookingFormProps) {
         text: 'Rezervarea ta a fost creată! Te rugăm să verifici email-ul pentru codul de verificare.' 
       });
     } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : 'A apărut o eroare. Te rugăm să încerci din nou.';
       setMessage({ 
         type: 'error', 
-        text: error instanceof Error ? error.message : 'A apărut o eroare. Te rugăm să încerci din nou.' 
+        text: errorMessage
       });
+      
+      // If email failed, show additional instructions
+      if (errorMessage.includes('razvanblaga10@gmail.com')) {
+        setTimeout(() => {
+          setMessage({
+            type: 'error',
+            text: `${errorMessage} Alternativ, poți trimite un email direct la razvanblaga10@gmail.com cu detaliile rezervării.`
+          });
+        }, 3000);
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -203,12 +214,17 @@ export default function BookingForm({ services }: BookingFormProps) {
           onChange={(e) => setFormData({ ...formData, serviceId: e.target.value })}
           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           required
+          disabled={!services || services.length === 0}
         >
-          {services.map((service) => (
-            <option key={service.id} value={service.id}>
-              {service.name}
-            </option>
-          ))}
+          {services && services.length > 0 ? (
+            services.map((service) => (
+              <option key={service.id} value={service.id}>
+                {service.name}
+              </option>
+            ))
+          ) : (
+            <option value="">Se încarcă serviciile...</option>
+          )}
         </select>
       </div>
 
