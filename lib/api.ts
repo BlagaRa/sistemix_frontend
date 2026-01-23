@@ -114,4 +114,18 @@ export const api = {
     }
     return response.json();
   },
+
+  async resendVerificationCode(bookingId: string): Promise<{ message: string }> {
+    const response = await fetch(`${API_BASE_URL}/bookings/${bookingId}/resend-code`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error.message || 'Failed to resend verification code');
+    }
+    return response.json();
+  },
 };

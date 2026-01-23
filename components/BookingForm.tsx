@@ -24,6 +24,7 @@ export default function BookingForm({ services }: BookingFormProps) {
   const [bookingId, setBookingId] = useState<string | null>(null);
   const [verificationCode, setVerificationCode] = useState('');
   const [isVerifying, setIsVerifying] = useState(false);
+  const [isResending, setIsResending] = useState(false);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -97,6 +98,28 @@ export default function BookingForm({ services }: BookingFormProps) {
     }
   };
 
+  const handleResendCode = async () => {
+    if (!bookingId) return;
+
+    setIsResending(true);
+    setMessage(null);
+
+    try {
+      await api.resendVerificationCode(bookingId);
+      setMessage({ 
+        type: 'success', 
+        text: 'Codul de verificare a fost retrimis! Te rugăm să verifici email-ul.' 
+      });
+    } catch (error) {
+      setMessage({ 
+        type: 'error', 
+        text: error instanceof Error ? error.message : 'Nu am putut retrimite codul. Te rugăm să încerci din nou.' 
+      });
+    } finally {
+      setIsResending(false);
+    }
+  };
+
   if (verificationStep === 'verify') {
     return (
       <div className="bg-white rounded-lg shadow-md p-6 space-y-4">
@@ -147,20 +170,31 @@ export default function BookingForm({ services }: BookingFormProps) {
             disabled={isVerifying || verificationCode.length !== 6}
             className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {isVerifying ? 'Se verifică...' : 'Verifică codul'}
+            {isVerifying ? 'Se verifică...' : 'Confirmă rezervarea'}
           </button>
 
-          <button
-            type="button"
-            onClick={() => {
-              setVerificationStep('form');
-              setVerificationCode('');
-              setMessage(null);
-            }}
-            className="w-full bg-gray-200 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500"
-          >
-            Înapoi la formular
-          </button>
+          <div className="flex gap-3">
+            <button
+              type="button"
+              onClick={handleResendCode}
+              disabled={isResending}
+              className="flex-1 bg-gray-200 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {isResending ? 'Se trimite...' : 'Retrimite codul'}
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                setVerificationStep('form');
+                setVerificationCode('');
+                setMessage(null);
+              }}
+              className="flex-1 bg-gray-200 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500"
+            >
+              Înapoi
+            </button>
+          </div>
         </form>
       </div>
     );

@@ -23,6 +23,8 @@ const serviceMap: Record<string, string> = {
   'Consultanță': 'Consulting',
 };
 
+type VerificationStep = 'form' | 'verify' | 'success';
+
 export default function BookingPage() {
   const [services, setServices] = useState<Service[]>([]);
   const [loading, setLoading] = useState(true);
@@ -36,6 +38,11 @@ export default function BookingPage() {
     serviceId: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [verificationStep, setVerificationStep] = useState<VerificationStep>('form');
+  const [bookingId, setBookingId] = useState<string | null>(null);
+  const [verificationCode, setVerificationCode] = useState('');
+  const [isVerifying, setIsVerifying] = useState(false);
+  const [isResending, setIsResending] = useState(false);
 
   useEffect(() => {
     const fetchServices = async () => {
@@ -81,24 +88,64 @@ export default function BookingPage() {
     const bookingDescription = `Appointment scheduled for ${formatDate(selectedDate)} at ${selectedTime}\n\n${formData.description}`;
 
     try {
-      await api.createBooking({
+      const booking = await api.createBooking({
         ...formData,
         description: bookingDescription,
       });
-      toast.success('Your booking has been submitted successfully! We will contact you for confirmation.');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        description: '',
-        serviceId: services[0]?.id || '',
-      });
-      setSelectedDate(null);
-      setSelectedTime('');
+      setBookingId(booking.id);
+      setVerificationStep('verify');
+      toast.success('Booking created! Please check your email for the verification code.');
     } catch (error) {
       toast.error(error instanceof Error ? error.message : 'An error occurred. Please try again.');
     } finally {
       setIsSubmitting(false);
+    }
+  };
+
+  const handleVerifyCode = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!bookingId) return;
+
+    setIsVerifying(true);
+
+    try {
+      await api.verifyBookingCode(bookingId, verificationCode);
+      setVerificationStep('success');
+      toast.success('Booking confirmed! You will receive a confirmation email shortly.');
+      // Reset form after successful verification
+      setTimeout(() => {
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          description: '',
+          serviceId: services[0]?.id || '',
+        });
+        setSelectedDate(null);
+        setSelectedTime('');
+        setVerificationCode('');
+        setBookingId(null);
+        setVerificationStep('form');
+      }, 5000);
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : 'Invalid or expired code. Please try again.');
+    } finally {
+      setIsVerifying(false);
+    }
+  };
+
+  const handleResendCode = async () => {
+    if (!bookingId) return;
+
+    setIsResending(true);
+
+    try {
+      await api.resendVerificationCode(bookingId);
+      toast.success('Verification code resent! Please check your email.');
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : 'Failed to resend code. Please try again.');
+    } finally {
+      setIsResending(false);
     }
   };
 
@@ -128,6 +175,131 @@ export default function BookingPage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             {loading ? (
               <BookingSkeleton />
+            ) : verificationStep === 'verify' ? (
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="max-w-2xl mx-auto"
+              >
+                <Card className="border-2 border-black shadow-xl">
+                  <CardHeader className="bg-black text-white rounded-t-lg">
+                    <CardTitle className="text-2xl">Verify Your Booking</CardTitle>
+                    <CardDescription className="text-white/80">
+                      Enter the 6-digit code sent to your email
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="pt-6">
+                    <div className="bg-blue-50 border border-blue-200 rounded-md p-4 mb-6">
+                      <p className="text-sm text-blue-800">
+                        We sent a verification code to <strong>{formData.email}</strong>.
+                        Please enter the 6-digit code to confirm your booking.
+                      </p>
+                    </div>
+
+                    <form onSubmit={handleVerifyCode} className="space-y-6">
+                      <div>
+                        <label htmlFor="verificationCode" className="block text-sm font-semibold text-black mb-2">
+                          Verification Code
+                        </label>
+                        <Input
+                          type="text"
+                          id="verificationCode"
+                          value={verificationCode}
+                          onChange={(e) => {
+                            const value = e.target.value.replace(/\D/g, '').slice(0, 6);
+                            setVerificationCode(value);
+                          }}
+                          placeholder="000000"
+                          maxLength={6}
+                          className="w-full text-center text-3xl tracking-widest font-bold"
+                          required
+                        />
+                        <p className="text-xs text-gray-500 mt-2">Enter the 6-digit code from your email</p>
+                      </div>
+
+                      <Button
+                        type="submit"
+                        disabled={isVerifying || verificationCode.length !== 6}
+                        className="w-full bg-black hover:bg-gray-900 text-white shadow-lg hover:shadow-xl transition-all duration-300 py-6 text-lg font-semibold"
+                        size="lg"
+                      >
+                        {isVerifying ? (
+                          <span className="flex items-center gap-2">
+                            <motion.div
+                              animate={{ rotate: 360 }}
+                              transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+                              className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
+                            />
+                            Verifying...
+                          </span>
+                        ) : (
+                          'Confirm Booking'
+                        )}
+                      </Button>
+
+                      <div className="flex gap-3">
+                        <Button
+                          type="button"
+                          onClick={handleResendCode}
+                          disabled={isResending}
+                          variant="outline"
+                          className="flex-1 border-2 border-black hover:bg-gray-100"
+                          size="lg"
+                        >
+                          {isResending ? (
+                            <span className="flex items-center gap-2">
+                              <motion.div
+                                animate={{ rotate: 360 }}
+                                transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+                                className="w-4 h-4 border-2 border-black border-t-transparent rounded-full"
+                              />
+                              Sending...
+                            </span>
+                          ) : (
+                            'Resend Code'
+                          )}
+                        </Button>
+
+                        <Button
+                          type="button"
+                          onClick={() => {
+                            setVerificationStep('form');
+                            setVerificationCode('');
+                          }}
+                          variant="outline"
+                          className="flex-1 border-2 border-black hover:bg-gray-100"
+                          size="lg"
+                        >
+                          Back to Form
+                        </Button>
+                      </div>
+                    </form>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ) : verificationStep === 'success' ? (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                className="max-w-2xl mx-auto text-center"
+              >
+                <Card className="border-2 border-green-500 shadow-xl">
+                  <CardContent className="pt-12 pb-12">
+                    <div className="mx-auto w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                      <CheckCircle2 className="w-10 h-10 text-green-600" />
+                    </div>
+                    <h2 className="text-3xl font-bold text-black mb-4">Booking Confirmed!</h2>
+                    <p className="text-lg text-gray-600 mb-6">
+                      Your booking has been successfully confirmed. You will receive a confirmation email with all the details shortly.
+                    </p>
+                    <p className="text-sm text-gray-500">
+                      This page will redirect automatically in a few seconds...
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ) : (
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                 <motion.div
