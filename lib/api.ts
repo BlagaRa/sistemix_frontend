@@ -43,6 +43,10 @@ export interface Booking {
   status: string;
   serviceId: string;
   service: Service;
+  verificationCode?: string;
+  isVerified: boolean;
+  codeExpiresAt?: string;
+  verifiedAt?: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -92,6 +96,21 @@ export const api = {
     if (!response.ok) {
       const error = await response.json();
       throw new Error(error.message || 'Failed to create booking');
+    }
+    return response.json();
+  },
+
+  async verifyBookingCode(bookingId: string, code: string): Promise<Booking> {
+    const response = await fetch(`${API_BASE_URL}/bookings/${bookingId}/verify`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ code }),
+    });
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error.message || 'Failed to verify booking code');
     }
     return response.json();
   },
