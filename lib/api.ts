@@ -12,7 +12,7 @@ const getApiBaseUrl = (): string => {
       console.error(
         'NEXT_PUBLIC_API_URL is not set! ' +
         'Please configure it in Cloudflare Pages → Settings → Environment Variables. ' +
-        'Set NEXT_PUBLIC_API_URL to your backend URL (e.g., https://api.sistemix.com)'
+        'Set NEXT_PUBLIC_API_URL to your backend URL (e.g., https://api.sistemix.net)'
       );
     }
     // Return default for build time, will be validated at runtime
