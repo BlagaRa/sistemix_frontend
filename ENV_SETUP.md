@@ -24,7 +24,7 @@ NEXT_PUBLIC_API_URL=http://localhost:3000
 3. Add variables for **Production** environment:
 
 ```
-NEXT_PUBLIC_SITE_URL = https://sistemix.com
+NEXT_PUBLIC_SITE_URL = https://sistemix.net
 NEXT_PUBLIC_API_URL = https://your-backend-url.com
 GOOGLE_VERIFICATION = your-google-verification-code (optional)
 ```

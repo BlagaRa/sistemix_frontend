@@ -107,7 +107,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Sistemix" }],
   creator: "Sistemix",
   publisher: "Blaga Razvan Antonio PFA",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://sistemix.com"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://sistemix.net"),
   icons: {
     icon: '/logo-dark2.png',
     shortcut: '/logo-dark2.png',
@@ -123,7 +123,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: process.env.NEXT_PUBLIC_SITE_URL || "https://sistemix.com",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://sistemix.net",
     siteName: "Sistemix",
     title: "Sistemix - Web Development, AI Agents & Automation Solutions",
     description: "Sistemix offers professional web development, website creation, AI agents development, and business automation services in Romania and Europe. Specialized solutions for startups and businesses.",
@@ -163,7 +163,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sistemix.com";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sistemix.net";
   
   return (
     <html lang="en" className="scroll-smooth">
