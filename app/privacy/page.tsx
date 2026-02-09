@@ -5,6 +5,9 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Privacy Policy - Sistemix',
   description: 'Privacy Policy for Sistemix. Learn how we collect, use, and protect your personal data in accordance with GDPR and Romanian law.',
+  alternates: {
+    canonical: '/privacy',
+  },
 };
 
 export default function PrivacyPolicyPage() {

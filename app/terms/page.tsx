@@ -5,6 +5,9 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Terms of Service - Sistemix',
   description: 'Terms of Service for Sistemix. Read our terms and conditions for using our services.',
+  alternates: {
+    canonical: '/terms',
+  },
 };
 
 export default function TermsOfServicePage() {

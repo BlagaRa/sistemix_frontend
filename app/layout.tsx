@@ -170,6 +170,26 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/logo-dark2.png" />
         <link rel="apple-touch-icon" href="/logo-dark2.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        {/* WebSite Schema - pentru site name în SERP */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Sistemix",
+              url: baseUrl,
+              description: "Web Development, AI Agents & Automation Solutions",
+              publisher: {
+                "@type": "Organization",
+                name: "Sistemix",
+                url: baseUrl,
+                logo: `${baseUrl}/logo-dark2.png`,
+              },
+            }),
+          }}
+        />
         {/* Organization Schema - Focus pe Sistemix */}
         <script
           type="application/ld+json"

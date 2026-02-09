@@ -40,6 +40,9 @@ export const metadata: Metadata = {
     'process automation',
     'workflow automation',
   ],
+  alternates: {
+    canonical: '/servicii',
+  },
   openGraph: {
     title: 'Web Development, AI Agents & Automation Services | Sistemix',
     description: 'Professional web development, website creation, AI agents development, and business automation services by Sistemix. Serving startups and businesses in Romania and Europe.',

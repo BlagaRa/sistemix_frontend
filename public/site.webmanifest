@@ -1,0 +1,11 @@
+{
+  "name": "Sistemix",
+  "short_name": "Sistemix",
+  "description": "Web Development, AI Agents & Automation Solutions",
+  "start_url": "/",
+  "display": "standalone",
+  "icons": [
+    { "src": "/logo-dark2.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/logo-dark2.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
