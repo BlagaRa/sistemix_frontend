@@ -1,1 +1,3 @@
 https://www.sistemix.net/* https://sistemix.net/:splat 301
+https://sistemix-frontend.pages.dev/* https://sistemix.net/:splat 301
+https://*.sistemix-frontend.pages.dev/* https://sistemix.net/:splat 301
