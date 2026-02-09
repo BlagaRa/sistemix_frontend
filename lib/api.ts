@@ -2,23 +2,15 @@
 // Set NEXT_PUBLIC_API_URL in Cloudflare Pages → Settings → Environment Variables
 // For local development, defaults to http://localhost:3000
 const getApiBaseUrl = (): string => {
-  // During build time, environment variables might not be available
-  // Use a default value and validate at runtime instead
   const url = process.env.NEXT_PUBLIC_API_URL;
-  
+
   if (!url) {
-    // Only throw error at runtime, not during build
-    if (typeof window !== 'undefined' && process.env.NODE_ENV === 'production') {
-      console.error(
-        'NEXT_PUBLIC_API_URL is not set! ' +
-        'Please configure it in Cloudflare Pages → Settings → Environment Variables. ' +
-        'Set NEXT_PUBLIC_API_URL to your backend URL (e.g., https://api.sistemix.net)'
-      );
+    if (process.env.NODE_ENV === 'production') {
+      return 'https://sistemix-backend.onrender.com';
     }
-    // Return default for build time, will be validated at runtime
-    return process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
+    return 'http://localhost:3000';
   }
-  
+
   return url;
 };
 
